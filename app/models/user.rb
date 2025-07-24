@@ -30,10 +30,10 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    role == "admin"
+    role == 'admin'
   end
 
   def employee?
-    role == "employee"
+    role == 'employee'
   end
 end
