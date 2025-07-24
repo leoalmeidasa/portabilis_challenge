@@ -25,6 +25,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def search
+    users = User.ransack(ransack_params).result
+    render json: users, status: :ok
   end
 
   private

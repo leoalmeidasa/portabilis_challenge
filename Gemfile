@@ -33,11 +33,11 @@ gem "thruster", require: false
 gem "rack-cors"
 
 # Gem devise use for authentication
-gem 'devise', '~> 4.9'
-gem 'devise_token_auth', '~> 1.2'
+gem "devise", "~> 4.9"
+gem "devise_token_auth", "~> 1.2"
 
 # Gem for search
-gem 'ransack', '~> 4.3'
+gem "ransack", "~> 4.3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

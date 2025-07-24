@@ -6,6 +6,10 @@ class ApplicationController < ActionController::API
   private
   # Parameters allowed when signing up user
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation, :role])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :name, :email, :password, :password_confirmation, :role ])
+  end
+
+  def ransack_params
+    params.fetch(:q, {})
   end
 end

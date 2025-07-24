@@ -20,11 +20,20 @@ class User < ActiveRecord::Base
   scope :search_by_name, ->(query) { where("name ILIKE ?", "%#{query}%") }
   scope :search_by_email, ->(query) { where("email ILIKE ?", "%#{query}%") }
 
+  # Ransack: permitir busca em associações
+  def self.ransackable_attributes(auth_object = nil)
+    %w[id name email role]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[user]
+  end
+
   def admin?
-    role == 'admin'
+    role == "admin"
   end
 
   def employee?
-    role == 'employee'
+    role == "employee"
   end
 end
