@@ -28,8 +28,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_24_025904) do
     t.string "unconfirmed_email"
     t.string "name"
     t.string "nickname"
-    t.string "image"
     t.string "email"
+    t.integer "role", default: 0, null: false
+    t.boolean "active", default: true, null: false
+    t.string "external_id"
+    t.datetime "deactivated_at"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

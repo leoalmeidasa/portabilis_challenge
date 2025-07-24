@@ -23,16 +23,14 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[8.0]
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
 
-      ## Lockable
-      # t.integer  :failed_attempts, :default => 0, :null => false # Only if lock strategy is :failed_attempts
-      # t.string   :unlock_token # Only if unlock strategy is :email or :both
-      # t.datetime :locked_at
-
       ## User Info
       t.string :name
       t.string :nickname
-      t.string :image
       t.string :email
+      t.integer :role, null: false, default: 0
+      t.boolean :active, null: false, default: true
+      t.string :external_id
+      t.datetime :deactivated_at
 
       ## Tokens
       t.json :tokens
