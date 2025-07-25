@@ -26,8 +26,6 @@ class User < ActiveRecord::Base
   scope :search_by_name, ->(query) { where("name ILIKE ?", "%#{query}%") }
   scope :search_by_email, ->(query) { where("email ILIKE ?", "%#{query}%") }
 
-  private
-
   # Ransack: permitir busca em associações
   def self.ransackable_attributes(auth_object = nil)
     %w[id name email role]
@@ -44,6 +42,8 @@ class User < ActiveRecord::Base
   def user?
     role == 'user'
   end
+
+  private
 
   def password_required?
     !persisted? || !password.nil? || !password_confirmation.nil?
