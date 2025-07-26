@@ -20,9 +20,29 @@
 ● link: [Documentation](https://www.postman.com/devtechbrazil/workspace/testes/collection/14377778-93803a68-b659-4cae-ac7f-3b854b500296?action=share&creator=14377778)
 
 ## Setup
+```bash
+git clone https://github.com/leoalmeidasa/portabilis_challenge.git
+cd portabilis_challenge
 
-1. `git clone https://github.com/leoalmeidasa/portabilis_challenge.git`
-2. `cd portabilis_challenge`
-3. `Bundle install`
-4. `rails s`
-5. Abrir o link localhost:3000
+# installation of dependencies
+bundle install
+
+
+# creation of database and tables
+rails db:create
+rails db:migrate
+
+# Run the project
+rails s
+```
+ Abrir o link localhost:3000
+
+## Tests
+
+![Tests](https://github.com/peimelo/blog_api/actions/workflows/ruby.yml/badge.svg)
+
+To run the tests:
+
+```bash
+bundle exec rspec
+```
