@@ -9,8 +9,20 @@ console_command = '/rails/bin/rails console'
 
 [build]
 
+[deploy]
+release_command = "/bin/bash -c './bin/rails bundle:install && ./bin/rails db:create && ./bin/rails db:migrate'"
+
+[env]
+PORT = '3000'
+RAILS_ENV = "production"
+RAILS_SERVE_STATIC_FILES = "true"
+
+
+[processes]
+app = './bin/rails server'
+
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
