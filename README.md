@@ -11,13 +11,14 @@
 - Rails 8.0.2
 - Postgres
 
-## API no Heroku
+## API no Fly.io
 
-● link: 
+● link: https://portabilis-challenge.fly.dev/
 
 ## Documentação da API
 
-● link: [Documentation](https://www.postman.com/devtechbrazil/workspace/testes/collection/14377778-93803a68-b659-4cae-ac7f-3b854b500296?action=share&creator=14377778)
+● link: [Documentation](https://documenter.getpostman.com/view/14377778/2sB34oDdXu)
+● link: [TESTE API POSTMAN](https://www.postman.com/devtechbrazil/workspace/testes/collection/14377778-93803a68-b659-4cae-ac7f-3b854b500296?action=share&creator=14377778)
 
 ## Setup
 ```bash
