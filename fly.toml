@@ -10,7 +10,7 @@ console_command = '/rails/bin/rails console'
 [build]
 
 [deploy]
-release_command = "/bin/bash -c './bin/rails db:create && ./bin/rails db:migrate'"
+release_command = "/bin/bash -c './bin/rails db:prepare'"
 
 [env]
 PORT = '3000'
