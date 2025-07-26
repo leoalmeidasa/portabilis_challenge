@@ -1,24 +1,28 @@
-# README
+# Teste para vaga Ruby On Rails Pleno - Portabilis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Requisitos
 
-* Ruby version
+● Disponivel no Link: [Project](https://github.com/users/leoalmeidasa/projects/7)
 
-* System dependencies
+## Dependências
 
-* Configuration
+- Ruby 3.2.0
+- Rails 8.0.2
+- Postgres
 
-* Database creation
+## API no Heroku
 
-* Database initialization
+● link: 
 
-* How to run the test suite
+## Documentação da API
 
-* Services (job queues, cache servers, search engines, etc.)
+● link: [Documentation](https://www.postman.com/devtechbrazil/workspace/testes/collection/14377778-93803a68-b659-4cae-ac7f-3b854b500296?action=share&creator=14377778)
 
-* Deployment instructions
+## Setup
 
-* ...
+1. `git clone https://github.com/leoalmeidasa/portabilis_challenge.git`
+2. `cd portabilis_challenge`
+3. `Bundle install`
+4. `rails s`
+5. Abrir o link localhost:3000

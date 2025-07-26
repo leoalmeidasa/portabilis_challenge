@@ -7,11 +7,17 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   # Enums
-  enum :role, { employee: 0, admin: 1 }
+  enum :role, { user: 0, admin: 1 }
 
   # Validations
   validates :name, presence: true
-  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, length: { minimum: 2, maximum: 20 }
+  validates :email, presence: true, uniqueness: { case_sensitive: false },
+            format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "formato de email inválido" }
+  validates :password, presence: true, length: { minimum: 8, maximum: 20 }, if: :password_required?
+  validates :password_confirmation, presence: true, if: :password_required?
+
+  before_save { self.email = email.downcase }
 
   # Scopes
   scope :active, -> { where(active: true) }
@@ -33,7 +39,13 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
 
-  def employee?
-    role == 'employee'
+  def user?
+    role == 'user'
+  end
+
+  private
+
+  def password_required?
+    !persisted? || !password.nil? || !password_confirmation.nil?
   end
 end
