@@ -37,7 +37,7 @@ gem "devise", "~> 4.9"
 gem "devise_token_auth", "~> 1.2"
 
 # Gem for search
-gem "ransack", "~> 4.3"
+gem "ransack", "~> 4.4"
 
 # Gem for authorization users
 gem 'pundit', '~> 2.5'
